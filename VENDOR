@@ -1,0 +1,8 @@
+# Vendored, pinned IANA root-zone TLD list (data/tlds-alpha-by-domain.txt),
+# embedded via go:embed. This is the set of TLDs that EXIST — not the Public
+# Suffix List. Re-vendor DELIBERATELY: replace the file, bump Version() to match
+# the new header revision, and re-run any persisted TLD decisions — a changed
+# list re-keys downstream validity verdicts. Never auto-update.
+#
+# Upstream: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+iana-root-zone 2026072702

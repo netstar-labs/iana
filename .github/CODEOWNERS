@@ -1,0 +1,5 @@
+* @zxdev
+
+# The pinned root-zone list is the source of truth for TLD validity; a re-vendor
+# re-keys downstream decisions, so route data changes to a required owner.
+/data/**   @zxdev
