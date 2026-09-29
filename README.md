@@ -41,15 +41,14 @@ domain begin?", that is a separate concern with a separate data source. See
 The TLD set is a decision input, and a re-vendor silently changes which labels are
 valid. `Version()` returns the pinned list revision parsed from the data file's
 header; stamp it wherever a TLD verdict is persisted so a later re-vendor shows up
-as skew rather than a silent flip. This mirrors the drift discipline of the
-sibling [`idna`](https://github.com/netstar-labs/idna) module.
+as skew rather than a silent flip. This mirrors the drift discipline of a
+sibling UTS-46 host-canonicalization module that pins a Unicode version.
 
 ## Where this sits
 
-A member of the **canonicalization** family
-([handbook/families/canon.md](https://github.com/netstar-labs/handbook/blob/main/families/canon.md)),
-feeding the **UTS-46** side: `idna` maps a host to its A-label (the key), `iana`
-validates the TLD that key resolves against. Both `sanitize` (host rectify +
+A member of a broader canonicalization family, feeding the **UTS-46** side: a
+sibling host-canonicalization module maps a host to its A-label (the key),
+`iana` validates the TLD that key resolves against. Both `sanitize` (host rectify +
 TLD/apex) and `normie` (URL canonicalization) consume the pair. UTS-39 confusable
 analysis (`homoglyph`) is the separate "what does it look like?" signal.
 

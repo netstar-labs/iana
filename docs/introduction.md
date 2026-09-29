@@ -40,11 +40,10 @@ that stamp travels with the decision: store `Version()` beside a persisted verdi
 and a later change becomes *detectable skew* instead of a silent flip. Freshness is
 a choice made deliberately, not a surprise arriving over the wire.
 
-`iana` is a member of the **canonicalization** family (see
-[handbook/families/canon.md](https://github.com/netstar-labs/handbook/blob/main/families/canon.md)),
-the UTS-46 half: where [`idna`](https://github.com/netstar-labs/idna) maps a host
-to the punycode A-label that becomes its storage key, `iana` validates the TLD
-that key resolves against. Together they are the seam `sanitize` and `normie` lean
-on when they decide whether a host is real enough to canonicalize.
+`iana` is a member of a broader canonicalization family, the UTS-46 half:
+where a sibling host-canonicalization module maps a host to the punycode
+A-label that becomes its storage key, `iana` validates the TLD that key
+resolves against. Together they are the seam `sanitize` and `normie` lean on
+when they decide whether a host is real enough to canonicalize.
 
 *Read next:* [executive summary](executive-summary.md) · [architecture](architecture.md) · [user guide](userguide.md)
