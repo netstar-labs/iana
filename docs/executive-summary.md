@@ -37,9 +37,8 @@ module; both are governed, deliberately-updated data seams, not live feeds.
 
 ## Where it fits
 
-A member of the **canonicalization** family (see
-[handbook/families/canon.md](https://github.com/netstar-labs/handbook/blob/main/families/canon.md)),
-on the **UTS-46** side alongside `idna`: `idna` produces the punycode A-label that
-becomes a storage key; `iana` validates the TLD that key resolves against. UTS-39
-confusable/homoglyph analysis is a separate "looks like" signal, not part of this
-package.
+A member of a broader canonicalization family, on the **UTS-46** side alongside
+a sibling host-canonicalization module: that module produces the punycode
+A-label that becomes a storage key; `iana` validates the TLD that key resolves
+against. UTS-39 confusable/homoglyph analysis is a separate "looks like" signal,
+not part of this package.

@@ -91,19 +91,18 @@ nothing more.
 
 ## Family context
 
-`iana` is a member of the **canonicalization** family (see
-[handbook/families/canon.md](https://github.com/netstar-labs/handbook/blob/main/families/canon.md)),
-on the **UTS-46** side:
+`iana` is a member of a broader canonicalization family, on the **UTS-46** side:
 
 ```
-  host ─▶ idna.ToASCII ─▶ A-label (the storage key) ─┐
-                                                      ├─ UTS-46: what does the URL resolve to?
+  host ─▶ (sibling canonicalizer).ToASCII ─▶ A-label (the storage key) ─┐
+                                                                        ├─ UTS-46: what does the URL resolve to?
   A-label's rightmost label ─▶ iana.IsTLD ─▶ real TLD?┘
 ```
 
-`idna` (pinned to a Unicode version) produces the A-label that becomes a storage
-key; `iana` (pinned to an IANA root-zone revision) validates the TLD that key
-resolves against. Both are **pinned, deliberately-updated data seams** sharing the
-same drift discipline: a change re-keys downstream decisions, so it is stamped and
-migrated, never auto-updated. UTS-39 confusable/homoglyph analysis is the separate
-"what does it look like?" signal and does not live here.
+A sibling host-canonicalization module (pinned to a Unicode version) produces
+the A-label that becomes a storage key; `iana` (pinned to an IANA root-zone
+revision) validates the TLD that key resolves against. Both are **pinned,
+deliberately-updated data seams** sharing the same drift discipline: a change
+re-keys downstream decisions, so it is stamped and migrated, never
+auto-updated. UTS-39 confusable/homoglyph analysis is the separate "what does
+it look like?" signal and does not live here.

@@ -25,16 +25,16 @@
 //
 // # The pin and the stamp
 //
-// Mirroring the drift discipline of the sibling idna module: the TLD set is a
-// decision input, and a re-vendor silently changes which labels are valid. Stamp
-// [Version] wherever a TLD decision is persisted, so a later re-vendor is
-// detectable as skew (a stored "valid TLD" verdict was made against a known list
-// revision) rather than a silent flip. The set is immutable after init and safe
-// for concurrent use.
+// Mirroring the drift discipline of a sibling host-canonicalization module: the
+// TLD set is a decision input, and a re-vendor silently changes which labels are
+// valid. Stamp [Version] wherever a TLD decision is persisted, so a later
+// re-vendor is detectable as skew (a stored "valid TLD" verdict was made against
+// a known list revision) rather than a silent flip. The set is immutable after
+// init and safe for concurrent use.
 //
-// This is a member of the canonicalization family (see
-// netstar-labs/handbook/families/canon.md), feeding the UTS-46 side alongside
-// idna: idna maps a host to its A-label (the key), iana validates the TLD that
-// key resolves against. UTS-39 confusable analysis (homoglyph) is the separate
+// This package is part of a broader canonicalization family, feeding the
+// UTS-46 side alongside a sibling host-canonicalization module: that module
+// maps a host to its A-label (the key), iana validates the TLD that key
+// resolves against. UTS-39 confusable analysis (homoglyph) is the separate
 // "what does it look like?" signal and lives elsewhere.
 package iana
